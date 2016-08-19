@@ -450,7 +450,7 @@ class Lightify:
                 name = name.replace('\0', "")
             except TypeError:
                 # Decode using cp437 for python3. This is not UTF-8
-                name = name.decode('cp437').replace('\0', "")
+                name = name.decode('utf-8').replace('\0', "")
 
             self.__logger.debug('light: %x %x %s %x', a, addr, name, extra)
             if addr in old_lights:
